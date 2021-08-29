@@ -10,8 +10,7 @@ np.random.seed(SEED)
 #---
 def get_data(train):
 	data_raw = datasets.MNIST('../data/dl/', train=train, download=True,  transform=transforms.Compose([
-							transforms.ToTensor(),
-							lambda x: x.numpy().flatten()]), target_transform=lambda y: y.numpy())
+							transforms.ToTensor()]))
 
 	data_x, data_y = zip(*data_raw)
 	data_x = np.array(data_x)
